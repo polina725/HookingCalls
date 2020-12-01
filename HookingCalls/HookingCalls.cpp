@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    LPCWSTR appName = TEXT(".\\AppToHook.exe");
+    LPCWSTR appName = L".\\AppToHook.exe";
     char injectDLLName[] = ".\\HookDLL.dll";
     STARTUPINFO si = { sizeof(STARTUPINFO) };
     PROCESS_INFORMATION pi;

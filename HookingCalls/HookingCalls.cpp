@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    LPCWSTR appName = L".\\AppToHook.exe";
+    LPCWSTR appName = TEXT(".\\AppToHook.exe");
     char injectDLLName[] = ".\\HookDLL.dll";
     STARTUPINFO si = { sizeof(STARTUPINFO) };
     PROCESS_INFORMATION pi;
@@ -16,12 +16,12 @@ int main()
     ZeroMemory(&pi, sizeof(pi));
 
     si.cb = sizeof(si);
-        
+
     if (!CreateProcess(NULL, lpwCmdLine, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &si, &pi)) {
         cout << "CreateProcess() failed. Error: " << GetLastError() << endl;
         return -1;
     }
-    
+
 
     HANDLE process = OpenProcess(PROCESS_CREATE_THREAD | PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_VM_OPERATION, FALSE, pi.dwProcessId);
     if (process == NULL)
@@ -68,4 +68,4 @@ int main()
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
     return 0;
-}
+};

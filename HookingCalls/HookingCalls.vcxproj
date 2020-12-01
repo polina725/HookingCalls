@@ -141,9 +141,6 @@
   <ItemGroup>
     <ClCompile Include="HookingCalls.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\include\detours.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>
